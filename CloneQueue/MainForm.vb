@@ -14,7 +14,10 @@ Public Class MainForm
     End Sub
 
     Private Sub CloneRepo_Click(sender As Object, e As EventArgs) Handles CloneRepo.Click
-        CloneQueue.Clone(Me.RepoURL.Text)
+        If Not String.IsNullOrEmpty(Me.RepoURL.Text) Then
+            CloneQueue.Clone(Me.RepoURL.Text)
+        End If
+
     End Sub
 
 End Class
