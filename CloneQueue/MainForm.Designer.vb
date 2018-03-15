@@ -25,6 +25,8 @@ Partial Class MainForm
         Me.RepoURL = New System.Windows.Forms.TextBox()
         Me.CloneRepo = New System.Windows.Forms.Button()
         Me.CloneList = New System.Windows.Forms.ListView()
+        Me.RepoName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.RepoProgress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'RepoURL
@@ -46,11 +48,23 @@ Partial Class MainForm
         '
         'CloneList
         '
+        Me.CloneList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.RepoName, Me.RepoProgress})
         Me.CloneList.Location = New System.Drawing.Point(22, 12)
         Me.CloneList.Name = "CloneList"
         Me.CloneList.Size = New System.Drawing.Size(756, 375)
         Me.CloneList.TabIndex = 2
         Me.CloneList.UseCompatibleStateImageBehavior = False
+        Me.CloneList.View = System.Windows.Forms.View.Details
+        '
+        'RepoName
+        '
+        Me.RepoName.Text = "Name"
+        Me.RepoName.Width = 255
+        '
+        'RepoProgress
+        '
+        Me.RepoProgress.Text = "Progress"
+        Me.RepoProgress.Width = 109
         '
         'MainForm
         '
@@ -70,4 +84,6 @@ Partial Class MainForm
     Friend WithEvents RepoURL As TextBox
     Friend WithEvents CloneRepo As Button
     Friend WithEvents CloneList As ListView
+    Friend WithEvents RepoName As ColumnHeader
+    Friend WithEvents RepoProgress As ColumnHeader
 End Class
