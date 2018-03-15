@@ -24,7 +24,7 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Me.RepoURL = New System.Windows.Forms.TextBox()
         Me.CloneRepo = New System.Windows.Forms.Button()
-        Me.CloneList = New System.Windows.Forms.ListBox()
+        Me.CloneList = New System.Windows.Forms.ListView()
         Me.SuspendLayout()
         '
         'RepoURL
@@ -46,13 +46,11 @@ Partial Class MainForm
         '
         'CloneList
         '
-        Me.CloneList.FormattingEnabled = True
-        Me.CloneList.ItemHeight = 25
-        Me.CloneList.Items.AddRange(New Object() {"Example.git"})
-        Me.CloneList.Location = New System.Drawing.Point(22, 23)
+        Me.CloneList.Location = New System.Drawing.Point(22, 12)
         Me.CloneList.Name = "CloneList"
-        Me.CloneList.Size = New System.Drawing.Size(756, 354)
+        Me.CloneList.Size = New System.Drawing.Size(756, 375)
         Me.CloneList.TabIndex = 2
+        Me.CloneList.UseCompatibleStateImageBehavior = False
         '
         'MainForm
         '
@@ -71,5 +69,5 @@ Partial Class MainForm
 
     Friend WithEvents RepoURL As TextBox
     Friend WithEvents CloneRepo As Button
-    Friend WithEvents CloneList As ListBox
+    Friend WithEvents CloneList As ListView
 End Class
