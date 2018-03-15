@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CloneQueue", "CloneQueue\CloneQueue.vbproj", "{9E8D0E0E-A9E9-4B75-BEBE-C7F21E01C865}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E8D0E0E-A9E9-4B75-BEBE-C7F21E01C865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E8D0E0E-A9E9-4B75-BEBE-C7F21E01C865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E8D0E0E-A9E9-4B75-BEBE-C7F21E01C865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E8D0E0E-A9E9-4B75-BEBE-C7F21E01C865}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58FC62D1-7A71-4C0E-8577-44BA73F429E5}
+	EndGlobalSection
+EndGlobal
