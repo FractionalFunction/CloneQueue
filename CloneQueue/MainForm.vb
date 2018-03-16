@@ -2,7 +2,7 @@
 
 Public Class MainForm
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        CloneQueue.GitIsFunctional(True)
     End Sub
 
     Private Sub CloneList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CloneList.SelectedIndexChanged
@@ -14,7 +14,7 @@ Public Class MainForm
     End Sub
 
     Private Sub CloneRepo_Click(sender As Object, e As EventArgs) Handles CloneRepo.Click
-        If Not String.IsNullOrEmpty(Me.RepoURL.Text) Then
+        If Not String.IsNullOrEmpty(Me.RepoURL.Text) And CloneQueue.GitIsFunctional(True) Then
             CloneQueue.Clone(Me.RepoURL.Text)
         End If
 
