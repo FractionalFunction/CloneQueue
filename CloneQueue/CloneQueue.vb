@@ -104,7 +104,12 @@
                 & Environment.NewLine _
                 & "Error code: " & clone.ExitCode.ToString()
 
-            MessageBox.Show(errorMessage)
+            MessageBox.Show(
+                errorMessage,
+                "Could not clone repository",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+            )
         End If
     End Sub
 End Class
