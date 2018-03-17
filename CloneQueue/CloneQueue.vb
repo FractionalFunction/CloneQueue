@@ -68,31 +68,31 @@
         Return True
     End Function
 
-    Public Shared Sub Clone(url As String)
+    Public Shared Function Clone(url As String) As Process
         ' Clone the Git repository using the command line
 
-        Dim clone As New Process()
+        Dim cloneCall As New Process()
 
-        clone.StartInfo.UseShellExecute = False
-        clone.StartInfo.CreateNoWindow = True
-        clone.StartInfo.FileName = "git"
-        clone.StartInfo.Arguments = "clone " & url
+        cloneCall.StartInfo.UseShellExecute = False
+        cloneCall.StartInfo.CreateNoWindow = True
+        cloneCall.StartInfo.FileName = "git"
+        cloneCall.StartInfo.Arguments = "clone " & url
 
         ' Allow the outputs of the process to be read
-        clone.StartInfo.RedirectStandardOutput = True
-        clone.StartInfo.RedirectStandardError = True
+        cloneCall.StartInfo.RedirectStandardOutput = True
+        cloneCall.StartInfo.RedirectStandardError = True
 
         ' Clone the repository
-        clone.Start()
+        cloneCall.Start()
 
         ' Pause the function until the process exits
-        clone.WaitForExit()
+        cloneCall.WaitForExit()
 
-        If clone.ExitCode = 0 Then
+        If cloneCall.ExitCode = 0 Then
             ' Indicate that the clone was successful
             Dim successMessage As String = "Clone complete." _
                 & Environment.NewLine _
-                & clone.StandardOutput.ReadToEnd()
+                & cloneCall.StandardOutput.ReadToEnd()
 
             MessageBox.Show(successMessage)
 
@@ -100,9 +100,9 @@
             ' Display the error code and the standard error
             ' output From git if the clone fails
             Dim errorMessage As String =
-                clone.StandardError.ReadToEnd() _
+                cloneCall.StandardError.ReadToEnd() _
                 & Environment.NewLine _
-                & "Error code: " & clone.ExitCode.ToString()
+                & "Error code: " & cloneCall.ExitCode.ToString()
 
             MessageBox.Show(
                 errorMessage,
@@ -111,5 +111,9 @@
                 MessageBoxIcon.Error
             )
         End If
-    End Sub
+
+        Return cloneCall
+
+    End Function
+
 End Class
