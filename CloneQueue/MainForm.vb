@@ -15,9 +15,12 @@ Public Class MainForm
 
     Private Sub CloneRepo_Click(sender As Object, e As EventArgs) Handles CloneRepo.Click
         If Not String.IsNullOrEmpty(Me.RepoURL.Text) And CloneQueue.GitIsFunctional(True) Then
-            CloneQueue.Clone(Me.RepoURL.Text)
-        End If
+            Dim cloneCall As Process = CloneQueue.Clone(Me.RepoURL.Text)
 
+            If cloneCall.ExitCode = 0 Then
+                RepoURL.Text = String.Empty
+            End If
+        End If
     End Sub
 
 End Class
